@@ -3,7 +3,7 @@ from email.message import EmailMessage
 import ssl, smtplib, logging
 
 # Pointing to the root path where your HTML files live
-app = Flask(__name__, template_folder='../')
+app = Flask(__name__)
 logging.basicConfig(level=logging.INFO)
 
 GMAIL_USER     = 'info.nextwise501@gmail.com'
