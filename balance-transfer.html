@@ -978,7 +978,7 @@
       page:        window.location.pathname
     };
     try {
-      const res  = await fetch('http://127.0.0.1:5000/send-application', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+      const res  = await fetch('/send-application', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
       const data = await res.json();
       if (res.ok) {
         document.getElementById('successModal').classList.add('active');
