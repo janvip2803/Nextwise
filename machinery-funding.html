@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Equipment / Machinery Loan – NextWise Finserv</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0A1F3C;
+    --green: #1B7A3E;
+    --green-mid: #22963F;
+    --green-light: #E6F4EC;
+    --gold: #C8952A;
+    --green-pale: #F0FAF3;
+    --offwhite: #F5F8F5;
+    --white: #FFFFFF;
+    --offwhite: #F5F8F5;
+    --text: #0D1F12;
+    --muted: #4A6358;
+    --border: #D0E8D8;
+    --shadow: 0 4px 24px rgba(10,31,60,0.10);
+    --shadow-lg: 0 8px 48px rgba(10,31,60,0.16);
+    --shadow-grn: 0 4px 24px rgba(27,122,62,0.15);
+    --green-mid: #22963F;
+    --green-pale: #F0FAF3;
+    --green-light: #E6F4EC;
+    --gold: #C8952A;
+    --navy-mid: #122952;
+    --navy-light: #1A3A6B;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ─── NAVBAR ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,255,255,0.98);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 4%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 76px;
+    box-shadow: 0 2px 16px rgba(10,31,60,0.09);
+    gap: 1rem;
+  }
+  .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
+  .logo img { height: 60px; width: auto; object-fit: contain; display: block; }
+  .logo-brand-name {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    line-height: 1.25;
+    white-space: nowrap;
+  }
+  .logo-brand-name span { color: var(--green-mid); display: block; }
+  .nav-links {
+    display: flex; align-items: center;
+    gap: 0; list-style: none;
+    flex: 1; justify-content: center;
+    flex-wrap: nowrap;
+  }
+  .nav-links li { flex-shrink: 0; }
+  .nav-links a {
+    text-decoration: none; color: var(--muted);
+    font-size: 0.82rem; font-weight: 500;
+    padding: 8px 11px; border-radius: 6px;
+    transition: color 0.2s, background 0.2s;
+    white-space: nowrap; display: block;
+    position: relative;
+  }
+  .nav-links a:not(.nav-cta)::after {
+    content: ''; position: absolute; bottom: 3px; left: 11px; right: 11px;
+    height: 2px; background: linear-gradient(135deg, var(--green), var(--navy));
+    transform: scaleX(0); transform-origin: center;
+    transition: transform 0.22s ease;
+    border-radius: 2px;
+  }
+  .nav-links a:not(.nav-cta):hover { color: var(--green); background: rgba(27,122,62,0.05); }
+  .nav-links a:not(.nav-cta):hover::after { transform: scaleX(1); }
+  .nav-cta {
+    background: linear-gradient(135deg, var(--green), var(--navy));
+    color: white !important; padding: 10px 22px !important;
+    border-radius: 8px; font-weight: 700 !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    box-shadow: 0 4px 14px rgba(27,122,62,0.25);
+    transition: transform 0.15s, box-shadow 0.15s !important;
+    margin-left: 8px;
+  }
+  .nav-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(27,122,62,0.35) !important;
+    background: linear-gradient(135deg, var(--navy), var(--green)) !important;
+  }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; flex-shrink: 0; }
+  .hamburger span { width: 24px; height: 2px; background: var(--navy); border-radius: 2px; }
+
+  /* ─── TRUST BAR ─── */
+  .trust-bar {
+    background: var(--navy); padding: 16px 6%;
+    display: flex; align-items: center; justify-content: center; gap: 3rem; flex-wrap: wrap;
+  }
+  .trust-item { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.8); font-size: 0.85rem; font-weight: 500; }
+  .trust-icon { width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 0.9rem; }
+
+  /* ─── SECTION COMMONS ─── */
+  section { padding: 80px 6%; }
+  .section-tag {
+    display: inline-block; background: var(--green-light); color: var(--green);
+    font-size: 0.78rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+    padding: 5px 14px; border-radius: 100px; margin-bottom: 1rem;
+    border: 1px solid rgba(27,122,62,0.15);
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight: 700; color: var(--navy);
+    line-height: 1.22; margin-bottom: 1rem;
+  }
+  .section-sub { font-size: 1rem; color: var(--muted); max-width: 560px; line-height: 1.75; }
+  .section-head { margin-bottom: 3rem; }
+
+  .form-group { margin-bottom: 1rem; }
+  .form-group label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--navy); margin-bottom: 5px; }
+  .form-group input, .form-group select {
+    width: 100%; padding: 11px 14px; border: 1.5px solid var(--border);
+    border-radius: 8px; font-size: 0.92rem; font-family: 'DM Sans', sans-serif;
+    color: var(--text); background: var(--offwhite);
+    transition: border-color 0.2s, box-shadow 0.2s; outline: none;
+  }
+  .form-group input:focus, .form-group select:focus {
+    border-color: var(--green); box-shadow: 0 0 0 3px rgba(27,122,62,0.12); background: white;
+  }
+  .form-submit {
+    width: 100%; padding: 13px;
+    background: linear-gradient(135deg, var(--green), var(--navy));
+    color: white; border: none; border-radius: 10px;
+    font-size: 1rem; font-weight: 700; cursor: pointer; letter-spacing: 0.3px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 16px rgba(10,31,60,0.25); margin-top: 6px;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .form-submit:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(10,31,60,0.35); }
+  .form-trust { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 10px; font-size: 0.78rem; color: var(--muted); }
+  .form-trust::before { content: '🔒'; font-size: 0.85rem; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #060F1E;
+    color: rgba(255,255,255,0.58);
+    font-size: 0.88rem; line-height: 1.7;
+    border-top: 3px solid var(--green);
+  }
+  .footer-inner { max-width: 1180px; margin: 0 auto; padding: 0 6%; }
+  .footer-main { padding: 48px 0 36px; }
+  .footer-main-grid {
+    display: grid;
+    grid-template-columns: 180px 1fr 1fr 1fr;
+    gap: 48px; align-items: start;
+  }
+  .footer-logo-col { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+  .footer-logo-img { height: 64px; width: auto; object-fit: contain; display: block; border-radius: 8px; background: white; padding: 4px; }
+  .footer-brand-name { font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 800; color: white; letter-spacing: 1.5px; text-transform: uppercase; display: block; line-height: 1.2; }
+  .footer-brand-sub { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 1.8px; color: rgba(255,255,255,0.4); display: block; }
+  .footer-col-head { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,255,0.32); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .footer-col-body { font-size: 0.87rem; color: rgba(255,255,255,0.55); line-height: 1.8; }
+  .footer-service-list { list-style: none; display: flex; flex-direction: column; gap: 9px; margin: 0; padding: 0; }
+  .footer-service-list a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 0.87rem; transition: color 0.2s, padding-left 0.2s; display: inline-flex; align-items: center; gap: 6px; }
+  .footer-service-list a::before { content: ''; display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: var(--green-mid); opacity: 0.5; flex-shrink: 0; transition: opacity 0.2s; }
+  .footer-service-list a:hover { color: white; padding-left: 4px; }
+  .footer-service-list a:hover::before { opacity: 1; }
+  .footer-contact-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; color: rgba(255,255,255,0.58); }
+  .footer-contact-item svg { flex-shrink: 0; margin-top: 2px; }
+  .footer-contact-item a { color: rgba(255,255,255,0.58); text-decoration: none; transition: color 0.2s; }
+  .footer-contact-item a:hover { color: white; }
+  .footer-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.09) 25%, rgba(255,255,255,0.09) 75%, transparent); }
+  .footer-s3 { padding: 28px 0 36px; }
+  .footer-s3-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+  .footer-s3-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,255,0.28); }
+  .footer-social-row { display: flex; align-items: center; gap: 12px; }
+  .footer-social-icon { width: 42px; height: 42px; border-radius: 10px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; border: none; }
+  .footer-social-icon:hover { transform: translateY(-3px); box-shadow: 0 6px 18px rgba(0,0,0,0.35); }
+  .footer-social-icon svg { stroke: white; }
+  .footer-social-icon.ig { background: linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045); }
+  .footer-social-icon.li { background: #0a66c2; }
+  .footer-social-icon.fb { background: #1877f2; }
+  .footer-social-icon.wa { background: #25d366; }
+  .footer-copy { font-size: 0.76rem; color: rgba(255,255,255,0.28); text-align: center; padding: 16px 0 24px; border-top: 1px solid rgba(255,255,255,0.05); }
+  .footer-copy a { color: rgba(255,255,255,0.4); text-decoration:none; transition: color 0.2s; }
+  .footer-copy a:hover { color: rgba(255,255,255,0.75); }
+
+  /* Responsive footer */
+  @media (max-width: 760px) {
+        .footer-main-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .footer-s3-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+  }
+  @media (max-width: 480px) {
+    .footer-inner { padding: 0 5%; }
+    .footer-main { padding: 36px 0 28px; }
+  }
+  .rbi-badge {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.7); font-size: 0.78rem; font-weight: 500;
+    padding: 6px 14px; border-radius: 100px;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+
+  /* ─── MODAL ─── */
+  .modal-overlay {
+    position: fixed; inset: 0; z-index: 9999;
+    background: rgba(10,31,60,0.7); backdrop-filter: blur(4px);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none; transition: opacity 0.3s;
+  }
+  .modal-overlay.active { opacity: 1; pointer-events: all; }
+  .modal-box {
+    background: white; border-radius: 20px; padding: 44px 36px;
+    max-width: 420px; width: 90%; text-align: center;
+    box-shadow: var(--shadow-lg);
+    transform: translateY(20px); transition: transform 0.3s;
+  }
+  .modal-overlay.active .modal-box { transform: translateY(0); }
+  .modal-icon { font-size: 3rem; margin-bottom: 1rem; }
+  .modal-title { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--navy); margin-bottom: 0.8rem; }
+  .modal-text { font-size: 0.95rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; }
+  .modal-close { background: var(--green-light); color: var(--green); border: none; padding: 10px 28px; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+
+  /* ─── ANIMATIONS ─── */
+  .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* ─── MOBILE ─── */
+  @media (max-width: 768px) {
+    nav { padding: 0 4%; height: 68px; }
+    .nav-links { display: none; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: white; padding: 16px 0; box-shadow: 0 8px 24px rgba(10,31,60,0.12); z-index: 99; }
+    .nav-links.open { display: flex; }
+    .nav-links li { width: 100%; }
+    .nav-links a { padding: 12px 24px; border-radius: 0; font-size: 0.9rem; }
+    .nav-cta { margin: 8px 16px 4px; border-radius: 8px !important; text-align: center; }
+    .hamburger { display: flex; }
+    .logo img { height: 48px; }
+    section { padding: 60px 5%; }
+    .footer-top { grid-template-columns: 1fr; gap: 28px; }
+    .lead-grid { grid-template-columns: 1fr !important; }
+    .trust-bar { gap: 1.5rem; }
+  }
+
+
+  /* ── PRODUCT HERO PREMIUM ── */
+  .product-hero {
+    min-height: 85vh;
+    background: linear-gradient(135deg, #0A1628 0%, #0D2246 40%, var(--navy-mid) 70%, var(--green) 100%);
+    display: flex; align-items: center;
+    padding: 100px 80px 80px;
+    position: relative; overflow: hidden;
+  }
+  /* Floating blurred circles */
+  .product-hero::before {
+    content: '';
+    position: absolute; top: -120px; right: -120px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(27,122,62,0.45) 0%, transparent 65%);
+    border-radius: 50%; pointer-events: none;
+    animation: heroFloat 8s ease-in-out infinite alternate;
+  }
+  .product-hero::after {
+    content: '';
+    position: absolute; bottom: -140px; left: -100px;
+    width: 580px; height: 580px;
+    background: radial-gradient(circle, rgba(26,156,107,0.18) 0%, transparent 65%);
+    border-radius: 50%; pointer-events: none;
+    animation: heroFloat 10s ease-in-out infinite alternate-reverse;
+  }
+  .hero-orb-mid {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(27,122,62,0.12) 0%, transparent 70%);
+    border-radius: 50%; pointer-events: none;
+  }
+  @keyframes heroFloat {
+    from { transform: translateY(0px) scale(1); }
+    to   { transform: translateY(-30px) scale(1.05); }
+  }
+  .product-hero-inner {
+    max-width: 1400px; margin: 0 auto; width: 100%;
+    display: grid;
+    grid-template-columns: 55% 45%;
+    gap: 48px;
+    align-items: center;
+    position: relative; z-index: 1;
+  }
+  /* LEFT */
+  .product-hero-left {
+    color: white;
+    display: flex; flex-direction: column;
+    gap: 0;
+  }
+  .product-hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(200,149,42,0.12);
+    border: 1px solid rgba(200,149,42,0.35);
+    color: var(--gold);
+    padding: 7px 16px; border-radius: 100px;
+    font-size: 0.82rem; font-weight: 700;
+    letter-spacing: 0.6px; text-transform: uppercase;
+    margin-bottom: 24px;
+    width: fit-content;
+  }
+  .product-hero-badge::before { content: '●'; font-size: 0.45rem; animation: blink 1.8s infinite; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  .product-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 3.8vw, 3.4rem);
+    font-weight: 700; color: white;
+    line-height: 1.15;
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+  }
+  .product-hero h1 .highlight { color: var(--gold); }
+  .product-hero-sub {
+    font-size: 1.08rem; color: rgba(255,255,255,0.7);
+    line-height: 1.78; margin-bottom: 24px;
+    font-weight: 300; max-width: 520px;
+  }
+  .product-hero-stats {
+    display: flex; gap: 0; margin-bottom: 24px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px; padding: 18px 24px;
+    width: fit-content; gap: 28px;
+  }
+  .product-stat-item {}
+  .product-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.55rem; font-weight: 700; color: white; display: block;
+    line-height: 1.1;
+  }
+  .product-stat-label {
+    font-size: 0.72rem; color: rgba(255,255,255,0.5);
+    text-transform: uppercase; letter-spacing: 0.6px; margin-top: 3px;
+  }
+  .product-stat-div { width: 1px; background: rgba(255,255,255,0.15); align-self: stretch; }
+  .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--gold), #E8940F);
+    color: var(--navy);
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-size: 0.97rem; font-weight: 700;
+    border: none; cursor: pointer;
+    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(200,149,42,0.4);
+    font-family: 'DM Sans', sans-serif;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(200,149,42,0.55); }
+  .btn-secondary {
+    background: transparent;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-size: 0.97rem; font-weight: 600;
+    border: 1.5px solid rgba(255,255,255,0.35);
+    cursor: pointer; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: background 0.2s, border-color 0.2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .btn-secondary:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.6); }
+
+  /* RIGHT — Glassmorphism EMI card */
+  .emi-hero-card {
+    background: rgba(255,255,255,0.09);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-radius: 28px;
+    padding: 36px 32px;
+    border: 1px solid rgba(255,255,255,0.18);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.15);
+    max-width: 480px; margin-left: auto;
+    position: relative;
+  }
+  .emi-hero-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--green-mid), var(--gold));
+    border-radius: 28px 28px 0 0;
+    background-size: 200%;
+    animation: shimmer 3s linear infinite;
+  }
+  @keyframes shimmer {
+    0% { background-position: 200% center; }
+    100% { background-position: -200% center; }
+  }
+  .emi-hero-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem; font-weight: 700; color: white;
+    margin-bottom: 4px; margin-top: 4px;
+  }
+  .emi-hero-card-sub { font-size: 0.83rem; color: rgba(255,255,255,0.55); margin-bottom: 1.6rem; }
+  /* EMI inputs on card */
+  .emi-input-group { margin-bottom: 1.1rem; }
+  .emi-input-group label {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.8rem; font-weight: 600; color: rgba(255,255,255,0.75);
+    margin-bottom: 7px;
+  }
+  .emi-manual-input {
+    width: 112px; padding: 4px 10px;
+    border: 1.5px solid rgba(255,255,255,0.2);
+    border-radius: 7px;
+    font-size: 0.83rem; font-weight: 700;
+    color: var(--gold); text-align: right;
+    outline: none;
+    background: rgba(255,255,255,0.08);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .emi-manual-input:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(200,149,42,0.2);
+    background: rgba(255,255,255,0.12);
+  }
+  .emi-slider {
+    -webkit-appearance: none;
+    width: 100%; height: 4px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.2);
+    outline: none; cursor: pointer;
+  }
+  .emi-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px; height: 18px; border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 2px 8px rgba(200,149,42,0.5);
+    cursor: pointer; transition: transform 0.2s;
+  }
+  .emi-slider::-webkit-slider-thumb:hover { transform: scale(1.2); }
+  /* Results box inside card */
+  .emi-result-box {
+    background: rgba(10,31,60,0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 18px 20px;
+    margin-top: 1.2rem;
+  }
+  .emi-result-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    font-size: 0.87rem;
+  }
+  .emi-result-row:last-of-type { border-bottom: none; }
+  .emi-result-row span:first-child { color: rgba(255,255,255,0.6); }
+  .emi-result-row span:last-child { font-weight: 700; color: white; }
+  .emi-highlight { color: var(--gold) !important; font-size: 1.25rem !important; }
+  .emi-bar-row {
+    padding: 6px 0 2px;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    margin-top: 4px;
+  }
+  .emi-bar-label {
+    display: flex; justify-content: space-between;
+    font-size: 0.75rem; color: rgba(255,255,255,0.5);
+    margin-bottom: 5px;
+  }
+  .emi-bar-track {
+    height: 5px; border-radius: 4px;
+    background: rgba(255,255,255,0.1); overflow: hidden;
+    margin-bottom: 10px;
+  }
+  .emi-bar-fill { height: 100%; border-radius: 4px; transition: width 0.5s ease; }
+  .emi-bar-fill.blue { background: linear-gradient(90deg, var(--green-mid), #5B9BD5); }
+  .emi-bar-fill.gold { background: linear-gradient(90deg, var(--gold), #FFD080); }
+  /* Apply button on card */
+  .emi-apply-btn {
+    display: block; width: 100%; text-align: center; text-decoration: none;
+    margin-top: 16px;
+    background: linear-gradient(135deg, var(--green), var(--navy));
+    color: white; border: none; border-radius: 12px;
+    font-size: 0.95rem; font-weight: 700;
+    padding: 13px;
+    cursor: pointer; letter-spacing: 0.3px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 16px rgba(10,31,60,0.35);
+    font-family: 'DM Sans', sans-serif;
+  }
+  .emi-apply-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(10,31,60,0.45); }
+  .emi-secure-note {
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    font-size: 0.76rem; color: rgba(255,255,255,0.4);
+    margin-top: 10px;
+  }
+  /* Overview section */
+  .overview { background: var(--offwhite); }
+  .overview-inner { max-width: 1200px; margin: 0 auto; }
+  .overview-text {
+    font-size: 1.05rem; color: var(--muted); line-height: 1.8;
+    max-width: 760px; margin: 0 auto 3rem; text-align: center;
+  }
+  .feature-cards {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    margin-bottom: 3rem;
+  }
+  .feature-card {
+    background: white; border-radius: 16px;
+    padding: 28px 22px; border: 1px solid var(--border);
+    text-align: center;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+  .feature-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+  .feature-card-icon { font-size: 2rem; margin-bottom: 14px; display: block; }
+  .feature-card-title { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .feature-card-desc { font-size: 0.87rem; color: var(--muted); line-height: 1.65; }
+  /* Lead form */
+  .lead-form-section { background: white; }
+  .lead-form-inner {
+    max-width: 860px; margin: 0 auto;
+    background: var(--offwhite); border-radius: 20px;
+    padding: 44px 48px; border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+  .lead-form-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem; font-weight: 700; color: var(--navy);
+    margin-bottom: 6px; text-align: center;
+  }
+  .lead-form-sub { font-size: 0.92rem; color: var(--muted); text-align: center; margin-bottom: 2rem; }
+  .lead-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .lead-full { grid-column: 1 / -1; }
+  @media (max-width: 900px) {
+    .product-hero { padding: 100px 5% 60px; }
+    .product-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+    .emi-hero-card { max-width: 100%; margin-left: 0; }
+    .feature-cards { grid-template-columns: 1fr; }
+    .lead-form-inner { padding: 32px 24px; }
+    .lead-grid { grid-template-columns: 1fr; }
+  }
+
+
+  /* ── Tenure Month/Year Toggle ── */
+  .tenure-unit-toggle {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 0.75rem; font-weight: 700;
+    margin-left: 8px; flex-shrink: 0;
+  }
+  .tut-label { transition: color 0.2s; user-select: none; }
+  .tut-switch {
+    position: relative; display: inline-block;
+    width: 36px; height: 18px;
+  }
+  .tut-switch input { opacity: 0; width: 0; height: 0; }
+  .tut-knob {
+    position: absolute; cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(27,122,62,0.18);
+    border-radius: 18px;
+    transition: background 0.25s;
+  }
+  .tut-knob:before {
+    position: absolute; content: "";
+    height: 12px; width: 12px;
+    left: 3px; bottom: 3px;
+    background: linear-gradient(135deg, var(--green), var(--navy));
+    border-radius: 50%;
+    transition: transform 0.25s;
+  }
+  .tut-switch input:checked + .tut-knob { background: rgba(27,122,62,0.35); }
+  .tut-switch input:checked + .tut-knob:before { transform: translateX(18px); }
+  /* dark-card variant (sub-pages) */
+  .emi-hero-card .tut-knob:before { background: #fff; }
+  .emi-hero-card .tut-knob { background: rgba(255,255,255,0.2); }
+  .emi-hero-card .tut-switch input:checked + .tut-knob { background: rgba(255,255,255,0.4); }
+  .emi-hero-card .tut-label.active { color: #fff; }
+  .emi-hero-card .tut-label { color: rgba(255,255,255,0.45); }
+  /* light-card variant (index.html) */
+  .contact-right .tut-label.active { color: var(--blue, var(--green)); }
+  .contact-right .tut-label { color: rgba(27,122,62,0.35); }
+
+  
+  /* ─── REVIEWS ─── */
+  .reviews-section { background: var(--green-light); padding: 80px 6%; }
+  .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 2.5rem; }
+  .review-card {
+    background: white; border-radius: 16px; padding: 28px 26px;
+    box-shadow: 0 2px 16px rgba(10,31,60,0.07);
+    border: 1px solid var(--border);
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .review-stars { color: #C8952A; font-size: 1.1rem; letter-spacing: 2px; }
+  .review-text { font-size: 0.93rem; color: var(--muted); line-height: 1.75; font-style: italic; flex: 1; }
+  .review-author { display: flex; align-items: center; gap: 12px; }
+  .review-avatar {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--green), var(--navy));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; font-weight: 700; color: white; flex-shrink: 0;
+  }
+  .review-name { font-size: 0.9rem; font-weight: 700; color: var(--navy); }
+  .review-location { font-size: 0.78rem; color: var(--muted); }
+  .review-badge { font-size: 0.72rem; font-weight: 600; background: var(--green-light); color: var(--green-mid); padding: 3px 10px; border-radius: 20px; width: fit-content; }
+  @media(max-width:600px){ .reviews-grid { grid-template-columns: 1fr; } }
+
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">
+    <img src="images/nextwise-logo.jpeg" alt="NextWise Finserv">
+    <span class="logo-brand-name">NEXTWISE<span>FINSERV</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#services">Products &amp; Services</a></li>
+    <li><a href="index.html#process">How It Works</a></li>
+    <li><a href="index.html#industries">Our Track Record</a></li>
+    <li><a href="index.html#why">Why Us</a></li>
+    <li><a href="index.html#contact">Talk to an Expert</a></li>
+    <li><a href="#apply-form">EMI Calculator</a></li>
+    <li><a href="#apply-form" class="nav-cta">Apply Now →</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<main>
+
+
+<section class="product-hero">
+  <div class="hero-orb-mid"></div>
+  <div class="product-hero-inner">
+
+    <!-- LEFT -->
+    <div class="product-hero-left fade-up">
+      <div class="product-hero-badge">🔧 Equipment / Machinery Loan</div>
+      <h1>Finance Machinery & <span class="highlight">Equipment Fast</span></h1>
+      <p class="product-hero-sub">Fund new or used industrial machinery and equipment with the asset as collateral — competitive rates, quick turnaround.</p>
+      <div class="product-hero-stats">
+        <div class="product-stat-item">
+          <span class="product-stat-num">8.32%</span>
+          <div class="product-stat-label">Starting Rate (p.a.)</div>
+        </div>
+        <div class="product-stat-div"></div>
+        <div class="product-stat-item">
+          <span class="product-stat-num">₹50L–₹15Cr</span>
+          <div class="product-stat-label">Loan Amount</div>
+        </div>
+        <div class="product-stat-div"></div>
+        <div class="product-stat-item">
+          <span class="product-stat-num">60 Months</span>
+          <div class="product-stat-label">Max Tenure</div>
+        </div>
+      </div>
+      <div class="hero-btns">
+        <a href="#apply-form" class="btn-primary">Apply Now →</a>
+        <a href="tel:+919876543210" class="btn-secondary">📞 Call Us</a>
+      </div>
+    </div>
+
+    <!-- RIGHT — Glassmorphism EMI card -->
+    <div class="emi-hero-card fade-up">
+      <div class="emi-hero-card-title">EMI Calculator</div>
+      <div class="emi-hero-card-sub">Estimate your monthly repayment instantly.</div>
+      <div class="emi-input-group">
+        <label>Loan Amount <input type="text" class="emi-manual-input" id="slAmountText" value="₹2,000,000".replace(",","") onchange="syncFromText('amount')" onblur="syncFromText('amount')"></label>
+        <input type="range" class="emi-slider" id="slAmount" min="10000" max="100000000" step="10000" value="2000000" oninput="syncFromSlider('amount')">
+      </div>
+      <div class="emi-input-group">
+        <label>Interest Rate (p.a.) <input type="text" class="emi-manual-input" id="slRateText" value="11.5%" onchange="syncFromText('rate')" onblur="syncFromText('rate')"></label>
+        <input type="range" class="emi-slider" id="slRate" min="8.32" max="12.30" step="0.1" value="11.5" oninput="syncFromSlider('rate')">
+      </div>
+      <div class="emi-input-group">
+        <label>Loan Tenure <input type="text" class="emi-manual-input" id="slTenureText" value="48 months" onchange="syncFromText('tenure')" onblur="syncFromText('tenure')"><span class="tenure-unit-toggle"><span class="tut-label active" id="tenureUnitMo">Mo</span><label class="tut-switch"><input type="checkbox" id="tenureUnitChk" onchange="switchTenureUnit()"><span class="tut-knob"></span></label><span class="tut-label" id="tenureUnitYr">Yr</span></span></label>
+        <input type="range" class="emi-slider" id="slTenure" min="12" max="360" step="1" value="48" oninput="syncFromSlider('tenure')">
+      </div>
+      <div class="emi-result-box">
+        <div class="emi-result-row"><span>Monthly EMI</span><span class="emi-highlight" id="resEMI">–</span></div>
+        <div class="emi-result-row"><span>Total Payable</span><span id="resTotal">–</span></div>
+        <div class="emi-result-row"><span>Total Interest</span><span id="resInterest">–</span></div>
+        <div class="emi-bar-row">
+          <div class="emi-bar-label"><span>Principal</span><span id="pctPrincipal">–</span></div>
+          <div class="emi-bar-track"><div class="emi-bar-fill blue" id="barPrincipal" style="width:85%"></div></div>
+        </div>
+        <div class="emi-bar-row">
+          <div class="emi-bar-label"><span>Interest</span><span id="pctInterest">–</span></div>
+          <div class="emi-bar-track"><div class="emi-bar-fill gold" id="barInterest" style="width:15%"></div></div>
+        </div>
+      </div>
+      <a href="#apply-form" class="emi-apply-btn">Apply Now for This Amount →</a>
+      <p class="emi-secure-note">🔒 100% Secure • Data Protected</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><div class="trust-icon">🏦</div> 20+ Banking Partners</div>
+  <div class="trust-item"><div class="trust-icon">✅</div> RBI Registered DSA</div>
+  <div class="trust-item"><div class="trust-icon">⚡</div> 48-Hour Approval</div>
+  <div class="trust-item"><div class="trust-icon">🔒</div> 100% Data Security</div>
+  <div class="trust-item"><div class="trust-icon">🌟</div> 4.9/5 Client Rating</div>
+</div>
+
+
+<!-- OVERVIEW -->
+<section class="overview">
+  <div class="overview-inner">
+    <div style="text-align:center; margin-bottom:2rem;">
+      <span class="section-tag">Loan Overview</span>
+      <h2 class="section-title">Machinery & Equipment Loan — Everything You Need to Know</h2>
+    </div>
+    <p class="overview-text">Machinery and Equipment Loans help businesses acquire industrial assets without upfront capital strain. The asset itself serves as collateral, making it easier to get approved. NextWise Finserv works with lenders who specialize in manufacturing and industrial financing.</p>
+    <div class="feature-cards">
+      <div class="feature-card fade-up">
+        <span class="feature-card-icon">🔧</span>
+        <div class="feature-card-title">New & Used Machinery</div>
+        <div class="feature-card-desc">Finance both brand new and second-hand equipment with flexible terms.</div>
+      </div>
+      <div class="feature-card fade-up">
+        <span class="feature-card-icon">⚡</span>
+        <div class="feature-card-title">Quick Turnaround</div>
+        <div class="feature-card-desc">Loans processed in 3–5 working days with minimal documentation.</div>
+      </div>
+      <div class="feature-card fade-up">
+        <span class="feature-card-icon">🏭</span>
+        <div class="feature-card-title">Industry-Specific Lenders</div>
+        <div class="feature-card-desc">We match you with lenders who understand your industry and machine type.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- LEAD FORM -->
+<section class="lead-form-section" id="apply-form">
+  <div class="section-head fade-up" style="text-align:center">
+    <span class="section-tag">Apply Now</span>
+    <h2 class="section-title">Get Your Equipment Loan in 3 Simple Steps</h2>
+    <p class="section-sub" style="margin:0 auto">Fill the form below and our advisor will call you within 30 minutes.</p>
+  </div>
+  <div class="lead-form-inner fade-up">
+    <div class="lead-form-title">Submit Your Application</div>
+    <p class="lead-form-sub">All fields are required. Your data is 100% secure and never shared.</p>
+    <form id="leadForm" onsubmit="submitLead(event)">
+      <div class="lead-grid">
+        <div class="form-group">
+          <label for="fname">Full Name *</label>
+          <input type="text" id="fname" placeholder="Your full name" required>
+        </div>
+        <div class="form-group">
+          <label for="fphone">Mobile Number *</label>
+          <input type="tel" id="fphone" placeholder="10-digit mobile number" maxlength="10" pattern="[0-9]{10}" inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9]/g,'')" required>
+        </div>
+        <div class="form-group">
+          <label for="fcity">City *</label>
+          <input type="text" id="fcity" placeholder="Your city" required>
+        </div>
+        <div class="form-group">
+          <label for="floan">Loan Type</label>
+          <input type="text" id="floan" value="Machinery Funding" readonly style="background:var(--green-light);color:var(--green);font-weight:600;cursor:not-allowed">
+        </div>
+        <div class="form-group lead-full">
+          <label for="famount">Loan Amount Required *</label>
+          <select id="famount" required>
+            <option value="">Select amount range</option>
+            <option>₹1 Lakh – ₹5 Lakhs</option>
+            <option>₹5 Lakhs – ₹10 Lakhs</option>
+            <option>₹10 Lakhs – ₹25 Lakhs</option>
+            <option>₹25 Lakhs – ₹50 Lakhs</option>
+            <option>₹50 Lakhs – ₹1 Crore</option>
+            <option>Above ₹1 Crore</option>
+          </select>
+        </div>
+      </div>
+      <div style="margin-top:20px">
+        <button type="submit" class="form-submit">Submit Application →</button>
+        <p class="form-trust" style="margin-top:12px">100% Secure · Your data is never shared</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+</main>
+
+<footer>
+  <div class="footer-main">
+    <div class="footer-inner">
+      <div class="footer-main-grid">
+
+        <!-- Col 1 — Logo -->
+        <div class="footer-logo-col">
+          <img src="images/nextwise-logo.jpeg" alt="NextWise Finserv" class="footer-logo-img">
+          <span class="footer-brand-name">NEXTWISE</span>
+          <span class="footer-brand-sub">FINSERV · DSA Loan Partner</span>
+        </div>
+
+        <!-- Col 2 — About Us -->
+        <div>
+          <div class="footer-col-head">About Us</div>
+          <p class="footer-col-body">NEXTWISE FINSERV helps businesses and individuals secure fast and reliable financing through India's leading banks and NBFCs — with zero paperwork hassle.</p>
+        </div>
+
+        <!-- Col 3 — Services -->
+        <div>
+          <div class="footer-col-head">Services</div>
+          <ul class="footer-service-list">
+            <li><a href="home-loan.html">Home Loan</a></li>
+            <li><a href="msme-loan.html">MSME Loan</a></li>
+            <li><a href="mortgage-loan.html">Mortgage Loan</a></li>
+            <li><a href="working-capital.html">Working Capital</a></li>
+            <li><a href="insurance.html">Insurance</a></li>
+            <li><a href="project-loan.html">Project Loan</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4 — Contact Details -->
+        <div>
+          <div class="footer-col-head">Contact Details</div>
+          <div class="footer-contact-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".55"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.22.01h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.07 6.07l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <span><a href="tel:+15550199">+1 555-0199</a></span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".55"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span><a href="mailto:info@nextwisefinserv.com">info@nextwisefinserv.com</a></span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".55"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Ahmedabad, Gujarat</span>
+          </div>
+          <div style="margin-top:16px">
+            <span class="rbi-badge">🏛️ RBI Registered DSA · GSTIN: 24XXXXX1234X1ZX</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-divider"></div>
+
+  <div class="footer-s3">
+    <div class="footer-inner">
+      <div class="footer-s3-inner">
+        <span class="footer-s3-label">Social Media</span>
+        <div class="footer-social-row">
+
+          <!-- Instagram -->
+          <a href="#" class="footer-social-icon ig" aria-label="Instagram" title="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+
+          <!-- LinkedIn -->
+          <a href="#" class="footer-social-icon li" aria-label="LinkedIn" title="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+
+          <!-- Facebook -->
+          <a href="#" class="footer-social-icon fb" aria-label="Facebook" title="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+
+          <!-- WhatsApp -->
+          <a href="https://wa.me/919876543210" class="footer-social-icon wa" aria-label="WhatsApp" title="WhatsApp" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-copy">
+    <div class="footer-inner">
+      © 2025 NextWise Finserv. All rights reserved. ·
+      <a href="#">Privacy Policy</a> ·
+      <a href="#">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/919876543210?text=Hi%2C+I+want+to+enquire+about+Machinery+Funding" class="float-wa" target="_blank" title="Chat on WhatsApp">💬</a>
+
+<div class="modal-overlay" id="successModal" onclick="closeModal(event)">
+  <div class="modal-box">
+    <div class="modal-icon">✅</div>
+    <h2 class="modal-title">Application Received!</h2>
+    <p class="modal-text">Thank you! Your <strong>Machinery / Equipment Loan</strong> application has been submitted. Our advisor will call you within <strong>30 minutes</strong>.</p>
+    <a href="https://wa.me/919876543210?text=Hi%2C+I+just+applied+for+Machinery+Funding" class="btn-primary" style="display:inline-flex;margin-bottom:14px;text-decoration:none" target="_blank">💬 WhatsApp Us Now</a><br>
+    <button class="modal-close" onclick="document.getElementById('successModal').classList.remove('active')">Close</button>
+  </div>
+</div>
+
+<script>
+  function fmtINR(n) { return '₹' + Math.round(n).toLocaleString('en-IN'); }
+  function calcEMI() {
+    const P = parseFloat(document.getElementById('slAmount').value);
+    const r = parseFloat(document.getElementById('slRate').value) / 12 / 100;
+    const chkU = document.getElementById('tenureUnitChk');
+    const sliderVal = parseInt(document.getElementById('slTenure').value);
+    const n = (chkU && chkU.checked) ? sliderVal * 12 : sliderVal;
+    const emi = r === 0 ? P / n : P * r * Math.pow(1+r,n) / (Math.pow(1+r,n)-1);
+    const total = emi * n; const interest = total - P;
+    const pp = Math.round(P/total*100); const ip = 100-pp;
+    document.getElementById('resEMI').textContent = fmtINR(emi);
+    document.getElementById('resTotal').textContent = fmtINR(total);
+    document.getElementById('resInterest').textContent = fmtINR(interest);
+    document.getElementById('barPrincipal').style.width = pp+'%';
+    document.getElementById('barInterest').style.width = ip+'%';
+    document.getElementById('pctPrincipal').textContent = pp+'%';
+    document.getElementById('pctInterest').textContent = ip+'%';
+  }
+  function syncFromSlider(type) {
+    if (type==='amount') document.getElementById('slAmountText').value = fmtINR(+document.getElementById('slAmount').value);
+    else if (type==='rate') document.getElementById('slRateText').value = document.getElementById('slRate').value+'%';
+    else { const chkS=document.getElementById('tenureUnitChk'); const vS=parseInt(document.getElementById('slTenure').value); document.getElementById('slTenureText').value = vS+(chkS&&chkS.checked?' years':' months'); }
+    calcEMI();
+  }
+  function syncFromText(type) {
+    if (type==='amount') { const v=parseFloat(document.getElementById('slAmountText').value.replace(/[₹,\s]/g,'')); if(!isNaN(v)&&v>0){document.getElementById('slAmount').value=Math.min(v,100000000);document.getElementById('slAmountText').value=fmtINR(v);} }
+    else if (type==='rate') { const v=parseFloat(document.getElementById('slRateText').value.replace(/[%\s]/g,'')); if(!isNaN(v)&&v>=6){document.getElementById('slRate').value=Math.min(v,36);document.getElementById('slRateText').value=v+'%';} else if(!isNaN(v)){document.getElementById('slRate').value=6;document.getElementById('slRateText').value='6%';} }
+    else { const chkT=document.getElementById('tenureUnitChk'); const isYr=chkT&&chkT.checked; const vT=parseInt(document.getElementById('slTenureText').value.replace(/[a-z\s]/g,'')); if(!isNaN(vT)&&vT>0){ if(isYr){const cy=Math.max(1,Math.min(vT,30));document.getElementById('slTenure').value=cy;document.getElementById('slTenureText').value=cy+' years';}else{const cm=Math.max(12,Math.min(vT,360));document.getElementById('slTenure').value=cm;document.getElementById('slTenureText').value=cm+' months';} } }
+    calcEMI();
+  }
+  function switchTenureUnit() {
+    const chk = document.getElementById('tenureUnitChk');
+    const slider = document.getElementById('slTenure');
+    const txt = document.getElementById('slTenureText');
+    document.getElementById('tenureUnitMo').classList.toggle('active', !chk.checked);
+    document.getElementById('tenureUnitYr').classList.toggle('active', chk.checked);
+    if (chk.checked) {
+      const months = parseInt(slider.value);
+      slider.min = 1; slider.max = 30; slider.step = 1;
+      const years = Math.max(1, Math.round(months / 12));
+      slider.value = years;
+      txt.value = years + ' years';
+    } else {
+      const years = parseInt(slider.value);
+      slider.min = 12; slider.max = 360; slider.step = 1;
+      const months = Math.max(12, years * 12);
+      slider.value = months;
+      txt.value = months + ' months';
+    }
+    calcEMI();
+  }
+  calcEMI();
+
+    async function submitLead(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    btn.textContent = 'Submitting...'; btn.disabled = true;
+    const payload = {
+      full_name:   document.getElementById('fname').value.trim(),
+      mobile:      document.getElementById('fphone').value.trim(),
+      city:        document.getElementById('fcity').value.trim(),
+      loan_type:   document.getElementById('floan').value,
+      loan_amount: document.getElementById('famount') ? document.getElementById('famount').value : 'Not specified',
+      page:        window.location.pathname
+    };
+    try {
+      const res  = await fetch('http://127.0.0.1:5000/send-application', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+      const data = await res.json();
+      if (res.ok) {
+        document.getElementById('successModal').classList.add('active');
+        e.target.reset();
+        const fl = document.getElementById('floan');
+        if (fl) fl.value = payload.loan_type;
+      } else { alert('Failed: ' + (data.error || 'Try again.')); }
+    } catch(err) { alert('Network error. Is Flask running?'); }
+    finally { btn.textContent = 'Submit Application →'; btn.disabled = false; }
+  }
+  function closeModal(e) { if(e.target===e.currentTarget) document.getElementById('successModal').classList.remove('active'); }
+  function toggleMenu() {
+    document.querySelector('.hamburger').classList.toggle('open');
+    document.querySelector('.nav-links').classList.toggle('open');
+  }
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(en => { if(en.isIntersecting) { en.target.classList.add('visible'); obs.unobserve(en.target); } });
+  }, {threshold:0.1});
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
