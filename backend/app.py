@@ -1,8 +1,9 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from email.message import EmailMessage
 import ssl, smtplib, logging
 
-app = Flask(__name__)
+# Pointing to the root path where your HTML files live
+app = Flask(__name__, template_folder='../')
 logging.basicConfig(level=logging.INFO)
 
 GMAIL_USER     = 'info.nextwise501@gmail.com'
@@ -17,11 +18,81 @@ def add_cors(response):
     response.headers['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS'
     return response
 
+# ==========================================
+# FRONTEND ROUTES (Serving Your HTML Pages)
+# ==========================================
+
+@app.route('/', methods=['GET'])
+def home():
+    # This automatically opens your index.html file on the homepage
+    return render_template('index.html')
+
+@app.route('/balance-transfer', methods=['GET'])
+def balance_transfer():
+    return render_template('balance-transfer.html')
+
+@app.route('/business-loan-unsecured', methods=['GET'])
+def business_loan_unsecured():
+    return render_template('business-loan-unsecured.html')
+
+@app.route('/cgtmse', methods=['GET'])
+def cgtmse():
+    return render_template('cgtmse.html')
+
+@app.route('/expansion-funding', methods=['GET'])
+def expansion_funding():
+    return render_template('expansion-funding.html')
+
+@app.route('/home-loan', methods=['GET'])
+def home_loan():
+    return render_template('home-loan.html')
+
+@app.route('/insurance', methods=['GET'])
+def insurance():
+    return render_template('insurance.html')
+
+@app.route('/loan-by-profession', methods=['GET'])
+def loan_by_profession():
+    return render_template('loan-by-profession.html')
+
+@app.route('/machinery-funding', methods=['GET'])
+def machinery_funding():
+    return render_template('machinery-funding.html')
+
+@app.route('/mortgage-loan', methods=['GET'])
+def mortgage_loan():
+    return render_template('mortgage-loan.html')
+
+@app.route('/msme-loan', methods=['GET'])
+def msme-loan():
+    return render_template('msme-loan.html')
+
+@app.route('/od-cc-limit', methods=['GET'])
+def od_cc_limit():
+    return render_template('od-cc-limit.html')
+
+@app.route('/project-loan', methods=['GET'])
+def project_loan():
+    return render_template('project-loan.html')
+
+@app.route('/solar-funding', methods=['GET'])
+def solar_funding():
+    return render_template('solar-funding.html')
+
+@app.route('/working-capital', methods=['GET'])
+def working_capital():
+    return render_template('working-capital.html')
+
+
+# ==========================================
+# BACKEND API ROUTES (Lead Form Submission)
+# ==========================================
+
 @app.route('/send-application', methods=['OPTIONS'])
 def options():
     return '', 200
 
-@app.route('/', methods=['GET'])
+@app.route('/api/health', methods=['GET'])
 def health():
     return jsonify({"status": "NextWise backend is running"}), 200
 
