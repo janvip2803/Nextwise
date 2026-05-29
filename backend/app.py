@@ -24,7 +24,6 @@ def add_cors(response):
 
 @app.route('/', methods=['GET'])
 def home():
-    # This automatically opens your index.html file on the homepage
     return render_template('index.html')
 
 @app.route('/balance-transfer', methods=['GET'])
@@ -64,7 +63,7 @@ def mortgage_loan():
     return render_template('mortgage-loan.html')
 
 @app.route('/msme-loan', methods=['GET'])
-def msme-loan():
+def msme_loan():                          # ← FIXED: was msme-loan(), hyphens invalid in Python
     return render_template('msme-loan.html')
 
 @app.route('/od-cc-limit', methods=['GET'])
