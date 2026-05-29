@@ -1893,7 +1893,7 @@
     btn.textContent='Submitting...'; btn.disabled=true;
     const payload={full_name:name,mobile:mobile,business_name:business,city:city,loan_type:loantype||'Not specified',loan_amount:amount,page:window.location.pathname};
     try {
-      const res=await fetch('http://127.0.0.1:5000/send-application',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+      const res=await fetch('/send-application',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
       const data=await res.json();
       if (res.ok){
         document.getElementById('contact').scrollIntoView({behavior:'smooth'});
